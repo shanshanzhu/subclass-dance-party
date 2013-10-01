@@ -23,3 +23,4 @@ ColorfulDancer.prototype.step = function(){
     this.$node.css("border", Math.floor(Math.random()*100) + "px solid " + this.returnColor());
 };
 
+
