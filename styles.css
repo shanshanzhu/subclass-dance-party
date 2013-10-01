@@ -29,3 +29,9 @@ body, a:link, a:visited, a:active{
 .lineup{
   left: 0px !important;
 }
+
+.president{
+  height: 50px;
+  width: auto;
+  border-radius: 50px;
+}
