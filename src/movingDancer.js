@@ -21,7 +21,3 @@ MovingDancer.prototype.step = function(){
     this.$node.animate(this.styleSettings($("body").height() * Math.random(),
             $("body").width() * Math.random()));
 };
-
-MovingDancer.prototype.lineup = function(){
-  this.$node.toggleClass('lineup')
-};

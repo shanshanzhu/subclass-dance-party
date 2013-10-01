@@ -10,7 +10,7 @@ describe("blinkyDancer", function() {
   });
 
   it("should have a jQuery $node object", function(){
-    expect(blinkyDancer.$node).to.be.an.instanceof(jQuery);
+    expect(blinkingDancer.$node).to.be.an.instanceof(jQuery);
   });
 
   it("should have a step function that makes its node blink", function() {
