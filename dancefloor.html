@@ -7,7 +7,6 @@
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
     <script src="src/colorfulDancer.js"></script>
-    <script src ='src/movingDancer.js'></script>
     <script src = 'src/PresidentDancer.js'></script>
   </head>
   <body>
@@ -16,7 +15,6 @@
       <span class="title">object dance party</span>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlinkyDancer">add a blinky dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="ColorfulDancer">add a colorful dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MovingDancer">add a moving dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="PresidentDancer">Add a president</a>
       <a href = "#" id = "lineup" class = "addDancerButton">LINEUP</a>
     </div>
@@ -33,18 +31,7 @@
         });
 
         $(".addDancerButton").on("click", function(event){
-          /* This function sets up the click handlers for the create-dancer
-           * buttons on index.html. You should not need to alter it.
-           * As long as the "data-dancer-maker-function-name" attribute of a
-           * class="addDancerButton" DOM node matches one of the names of the
-           * maker functions available in the global scope, clicking that node
-           * will call the function to make the dancer. */
 
-          /* dancerMakerFunctionName is a string which must match
-           * one of the dancer maker functions available in global scope.
-           * A new object of the given type will be created and added
-           * to the stage.
-           */
           var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
           // get the maker function for the kind of dancer we're supposed to make
           var dancerMakerFunction = window[dancerMakerFunctionName];
@@ -56,6 +43,21 @@
           );
           $('body').append(dancer.$node);
           window.dancers.push(dancer);
+        });
+        // window.position = [];
+        $(document.body).on('mouseover', function(event){
+          event.preventDefault();
+          // position.push(event.clientY, event.clientX);
+          // if (position.length > 200) {
+          //   position.splice(0,)
+          // }
+          for (var i = 0; i < window.dancers.length; i ++){
+            var dancer = window.dancers[i];
+            var n = dancer.random(50) + 100;
+            if (dancer.$node.hasClass('president')){
+              dancer.circleMouse(event.clientY + n, event.clientX + n, 50);
+            }
+          }
         });
       });
     </script>

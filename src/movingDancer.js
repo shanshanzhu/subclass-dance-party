@@ -18,6 +18,6 @@ ColorfulDancer.prototype.returnColor = function(){
 MovingDancer.prototype.step = function(){
 
     Dancer.prototype.step.call(this);
-    this.$node.animate(this.styleSettings($("body").height() * Math.random(),
-            $("body").width() * Math.random()));
+    this.$node.animate(this.styleSettings(this.top, this.left));
 };
+
